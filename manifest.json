@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+
+  "name": "CUI Notification",
+  "description": "CUI Notification",
+  "version": "1.0",
+  "author": "https://rehanshakir.com/",
+
+  "background": {
+    "scripts": ["popup.js"],
+    "persistent": true
+  },
+
+  "permissions": [
+    "activeTab",
+    "https://cuonline.cuilahore.edu.pk:8090//Courses/"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://cuonline.cuilahore.edu.pk:8090//Courses//Index/"],
+      "js": ["popup.js"]
+    }
+  ],
+  "browser_action": {
+    "default_icon": "logo.png",
+    "default_popup": "popup.html"
+  }
+}
